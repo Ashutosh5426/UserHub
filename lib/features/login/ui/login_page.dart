@@ -4,7 +4,7 @@ import 'package:user_hub/core/common_functions.dart';
 import 'package:user_hub/core/common_widgets/common_button_widget.dart';
 import 'package:user_hub/core/common_widgets/common_toast.dart';
 import 'package:user_hub/core/shared_preference/shared_preference.dart';
-import 'package:user_hub/features/user_list_page/ui/user_list_page.dart';
+import 'package:user_hub/features/user_list_page/ui/users_list_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -21,8 +21,8 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   void initState() {
-    _emailController = TextEditingController();
-    _passwordController = TextEditingController();
+    _emailController = TextEditingController(text: SharedPreference().getString(key: AppStrings.emailKeyName));
+    _passwordController = TextEditingController(text: SharedPreference().getString(key: AppStrings.passwordKeyName));
     super.initState();
   }
 
@@ -159,7 +159,7 @@ class _LoginPageState extends State<LoginPage> {
                   bool isEmailSaved = await SharedPreference().saveString(key: AppStrings.emailKeyName, value: _emailController.text);
                   bool isPasswordSaved = await SharedPreference().saveString(key: AppStrings.passwordKeyName, value: _passwordController.text);
                   if(isEmailSaved && isPasswordSaved){
-                    Navigator.of(context).push(MaterialPageRoute(builder: (_) => const UserListPage()));
+                    Navigator.of(context).push(MaterialPageRoute(builder: (_) => const UsersListPage()));
                   }
                 },
                 buttonText: 'Log In',
