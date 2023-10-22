@@ -9,12 +9,14 @@ class HorizontalBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Container(
-          width: width,
-          height: 5,
-          decoration: BoxDecoration(
-            color: color,
-            borderRadius: BorderRadius.circular(10),
+        Expanded(
+          child: Container(
+            width: width,
+            height: 5,
+            decoration: BoxDecoration(
+              color: color,
+              borderRadius: BorderRadius.circular(10),
+            ),
           ),
         ),
       ],

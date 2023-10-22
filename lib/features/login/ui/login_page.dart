@@ -159,7 +159,7 @@ class _LoginPageState extends State<LoginPage> {
                   bool isEmailSaved = await SharedPreference().saveString(key: AppStrings.emailKeyName, value: _emailController.text);
                   bool isPasswordSaved = await SharedPreference().saveString(key: AppStrings.passwordKeyName, value: _passwordController.text);
                   if(isEmailSaved && isPasswordSaved){
-                    Navigator.of(context).push(MaterialPageRoute(builder: (_) => const UsersListPage()));
+                    if (context.mounted) Navigator.of(context).push(MaterialPageRoute(builder: (_) => const UsersListPage()));
                   }
                 },
                 buttonText: 'Log In',
