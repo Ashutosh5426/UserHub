@@ -48,7 +48,7 @@ class _LoginPageState extends State<LoginPage> {
                     errorEmailText.value = validateEmail(value);
                   },
                   decoration: InputDecoration(
-                    hintText: 'enter email',
+                    hintText: AppStrings.enterEmail,
                     hintStyle: const TextStyle(fontSize: 14),
                     enabledBorder: OutlineInputBorder(
                       borderSide: const BorderSide(
@@ -103,7 +103,7 @@ class _LoginPageState extends State<LoginPage> {
                     errorPasswordText.value = validatePassword(value);
                   },
                   decoration: InputDecoration(
-                    hintText: 'enter password',
+                    hintText: AppStrings.enterPassword,
                     hintStyle: const TextStyle(fontSize: 14),
                     enabledBorder: OutlineInputBorder(
                       borderSide: const BorderSide(
@@ -153,7 +153,7 @@ class _LoginPageState extends State<LoginPage> {
               CustomButtonWidget(
                 onPressed: () async {
                   if (_emailController.text.isEmpty || _passwordController.text.isEmpty) {
-                    CommonToast.showToast('Please enter email and password');
+                    CommonToast.showToast(AppStrings.pleaseEnterEmailAndPassword);
                     return;
                   }
                   bool isEmailSaved = await SharedPreference().saveString(key: AppStrings.emailKeyName, value: _emailController.text);
@@ -162,7 +162,7 @@ class _LoginPageState extends State<LoginPage> {
                     if (context.mounted) Navigator.of(context).push(MaterialPageRoute(builder: (_) => const UsersListPage()));
                   }
                 },
-                buttonText: 'Log In',
+                buttonText: AppStrings.logIn,
               ),
               const SizedBox(height: 32),
             ],

@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:user_hub/features/user_details_page/bloc/user_details_page_events.dart';
 import 'package:user_hub/features/user_details_page/bloc/user_details_page_states.dart';

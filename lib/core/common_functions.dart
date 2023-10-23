@@ -1,6 +1,8 @@
+import 'package:user_hub/core/app_constants/app_strings.dart';
+
 String validateEmail(String? value) {
   if(value==null || value.isEmpty) {
-    return 'Enter a valid email address';
+    return AppStrings.enterAValidEmailAddress;
   }
   const pattern = r"(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'"
       r'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-'
@@ -12,28 +14,28 @@ String validateEmail(String? value) {
   final regex = RegExp(pattern);
 
   return !regex.hasMatch(value)
-      ? 'Enter a valid email address'
+      ? AppStrings.enterAValidEmailAddress
       : '';
 }
 
 String validatePassword(String value) {
   if (value.isEmpty) {
-    return 'Please enter password';
+    return AppStrings.pleaseEnterPassword;
   }
   if (value.length < 6) {
-    return 'Password should have 6 to 10 characters';
+    return AppStrings.passwordShouldHave6To10Chars;
   }
   if (value.length > 10) {
-    return 'Password should have 6 to 10 characters';
+    return AppStrings.passwordShouldHave6To10Chars;
   }
   if (!RegExp(r'^(?=.*[a-z])').hasMatch(value)) {
-    return 'Password should have at least one lower case letter';
+    return AppStrings.passwordShouldHaveOneLowerCaseLetter;
   }
   if (!RegExp(r'^(?=.*[A-Z])').hasMatch(value)) {
-    return 'Password should have at least one upper case letter';
+    return AppStrings.passwordShouldHaveOneUpperCaseLetter;
   }
   if (!RegExp(r'^(?=.*[@$!%*?&])').hasMatch(value)) {
-    return 'Password should contain at least one special symbol';
+    return AppStrings.passwordShouldHaveOneSpecialSymbol;
   }
   return '';
 }

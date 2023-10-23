@@ -7,4 +7,14 @@ abstract class AppStrings {
   static const String firstName = 'First Name';
   static const String lastName = 'Last Name';
   static const String userDetails = 'User Details';
+  static const String logIn = 'Log In';
+  static const String enterEmail = 'enter email';
+  static const String enterPassword = 'enter password';
+  static const String pleaseEnterEmailAndPassword = 'Please enter email and password';
+  static const String enterAValidEmailAddress = 'Enter a valid email address';
+  static const String pleaseEnterPassword = 'Please enter password';
+  static const String passwordShouldHave6To10Chars = 'Password should have 6 to 10 characters';
+  static const String passwordShouldHaveOneLowerCaseLetter = 'Password should have at least one lower case letter';
+  static const String passwordShouldHaveOneUpperCaseLetter = 'Password should have at least one upper case letter';
+  static const String passwordShouldHaveOneSpecialSymbol = 'Password should contain at least one special symbol';
 }
